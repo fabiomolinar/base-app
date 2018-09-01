@@ -1,0 +1,24 @@
+{
+  "name": "base-app",
+  "version": "0.0.1",
+  "description": "A base app with standard configurations and a technology stack already predefined to be used as a base to spin new web apps.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabiomolinar/base-app.git"
+  },
+  "keywords": [
+    "web app",
+    "base app"
+  ],
+  "author": "Fabio Thomaz Molinar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fabiomolinar/base-app/issues"
+  },
+  "homepage": "https://github.com/fabiomolinar/base-app#readme"
+}
