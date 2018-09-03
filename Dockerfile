@@ -6,13 +6,16 @@ ENV NPM_CONFIG_LOGLEVEL info
 # Values: development, staging, production, testing
 ENV NODE_ENV production
 
-WORKDIR /usr/src/app
+# Installing Meteor
+RUN curl "https://install.meteor.com/?release=1.7.0.5" | sh
 
+# Project setup
+WORKDIR /usr/src/app
+RUN meteor create --full .
 COPY package*.json ./
 # If running for production:
 # RUN npm install --only=production
 RUN npm install
-
 COPY . .
 
 EXPOSE 3000
