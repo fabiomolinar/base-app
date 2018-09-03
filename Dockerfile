@@ -11,11 +11,10 @@ RUN curl "https://install.meteor.com/?release=1.7.0.5" | sh
 
 # Project setup
 WORKDIR /usr/src/app
-RUN meteor create --full .
 COPY package*.json ./
 # If running for production:
 # RUN npm install --only=production
-RUN npm install
+RUN meteor npm install
 COPY . .
 
 EXPOSE 3000

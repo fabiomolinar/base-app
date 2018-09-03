@@ -27,4 +27,4 @@ The list below contains a list of technologies to be used (at least for now) as 
 
 ## Runing a node container
 
-`docker run -p 3000:3000 -it --rm --name container-name image-name`
+`docker run -p 3000:3000 -it --rm --name container-name image-name /bin/bash`
