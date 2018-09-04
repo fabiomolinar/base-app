@@ -7,10 +7,12 @@ ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_ENV production
 
 # Installing Meteor
-RUN curl "https://install.meteor.com/?release=1.7.0.5" | sh
+RUN cd ~ && \
+    curl "https://install.meteor.com/?release=1.7.0.5" | sh
 
 # Project setup
-WORKDIR /usr/src/app
+WORKDIR /home/node/app
+USER node
 COPY package*.json ./
 # If running for production:
 # RUN npm install --only=production
@@ -18,6 +20,5 @@ RUN meteor npm install
 COPY . .
 
 EXPOSE 3000
-CMD [ "meteor" ]
 
-USER node
+CMD [ "meteor" ]
