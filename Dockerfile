@@ -12,13 +12,17 @@ RUN cd ~ && \
 
 # Project setup
 WORKDIR /home/node/app
-USER node
 COPY package*.json ./
-# If running for production:
-# RUN npm install --only=production
-RUN meteor npm install
 COPY . .
+# 1. If running for production:
+# 	 RUN npm install --only=production
+# 2. Changing file permissions to node user
+# 3. Deleting the local build folder
+RUN meteor npm install && \
+	chown -R node:node . && \
+	rm -r .meteor/local
 
 EXPOSE 3000
 
+USER node
 CMD [ "meteor" ]
