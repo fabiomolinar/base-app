@@ -13,7 +13,6 @@ RUN cd ~ && \
 # Project setup
 WORKDIR /home/node/app
 COPY package*.json ./
-COPY . .
 # 1. If running for production:
 # 	 RUN npm install --only=production
 # 2. Changing file permissions to node user
@@ -21,6 +20,7 @@ COPY . .
 RUN meteor npm install && \
 	chown -R node:node . && \
 	rm -r .meteor/local
+COPY . .
 
 EXPOSE 3000
 
