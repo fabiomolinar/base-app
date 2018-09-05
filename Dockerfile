@@ -18,8 +18,8 @@ COPY package*.json ./
 # 2. Changing file permissions to node user
 # 3. Deleting the local build folder
 RUN meteor npm install && \
-	chown -R node:node . && \
-	rm -r .meteor/local
+	chown -R node:node .
+RUN rm -rf .meteor/local
 COPY . .
 
 EXPOSE 3000

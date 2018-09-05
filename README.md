@@ -25,6 +25,10 @@ The list below contains a list of technologies to be used (at least for now) as 
 
 `docker build -t username/image_name:tag_name .`
 
+If behind a proxy:
+
+`docker build -t username/image_name:tag_name . --build-arg HTTP_PROXY=165.225.68.34:18000`
+
 ## Runing a node container
 
 `docker run -p 3000:3000 -it --rm --name container-name image-name`
