@@ -32,3 +32,9 @@ If behind a proxy:
 ## Runing a node container
 
 `docker run -p 3000:3000 -it --rm --name container-name image-name`
+
+##Connecting to a running container
+
+`docker exec -it container-name bash`
+
+While connected, to exit simple use `exit`.
