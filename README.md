@@ -33,7 +33,7 @@ If behind a proxy:
 
 `docker run -p 3000:3000 -it --rm --name container-name image-name`
 
-##Connecting to a running container
+## Connecting to a running container
 
 `docker exec -it container-name bash`
 
