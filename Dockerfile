@@ -14,7 +14,7 @@ USER node
 RUN cd ~ && \
     curl "https://install.meteor.com/?release="${METEOR_VERSION} | sh && \
     PATH=$PATH:$HOME/.meteor && \
-    mkdir app && cd app && \
+    mkdir -p app && cd app && \
     meteor create ${METEOR_FLAG} .
 ENV PATH "$PATH:/home/node/.meteor"
 
